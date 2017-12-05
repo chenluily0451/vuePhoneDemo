@@ -1,12 +1,18 @@
 <template>
   <div class="main">
       <h1>
-        Wishes
+        Lists
       </h1>
     <p>
-      <input type="text" placeholder="请选择你的愿望" readonly v-on:focus="isShow">
+      <input type="text" placeholder="请选择你的愿望" readonly v-on:focus="openCheckList" autofocus="true">
     </p>
-    <check-list></check-list>
+    <ol>
+      <li v-for="list in childSelectedArray">
+          {{list.text}}
+      </li>
+    </ol>
+    <check-list ref="checklist" v-on:child-data="showData"></check-list>
+
   </div>
 </template>
 
@@ -18,8 +24,17 @@ export default {
     },
     name: 'MainContent',
     methods:{
-        isShow:function(){
-
+      openCheckList:function(){
+          this.$refs['checklist'].show()
+      },
+      showData: function(data){
+        this.childSelectedArray = data
+      }
+    },
+    data() {
+        return {
+            ishow : false,
+            childSelectedArray:''
         }
     }
 }
@@ -32,5 +47,17 @@ export default {
     text-align: center;
     font-size: 1.8rem;
     outline:none;
+  }
+  ol{
+    list-style-type:lower-alpha
+  }
+  li{
+    color: #333;
+    font-size: 1.5rem;
+    list-style: circle;
+  }
+
+  .hide{
+    display: none;
   }
 </style>
