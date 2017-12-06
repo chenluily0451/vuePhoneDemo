@@ -3,15 +3,16 @@
       <h1>
         Lists
       </h1>
-    <p>
+    <div class="line">
       <input type="text" placeholder="请选择你的愿望" readonly v-on:focus="openCheckList" autofocus="true">
-    </p>
-    <ol>
-      <li v-for="list in childSelectedArray">
+      <ol>
+        <li v-for="list in childSelectedArray">
           {{list.text}}
-      </li>
-    </ol>
-    <check-list ref="checklist" v-on:child-data="showData"></check-list>
+        </li>
+      </ol>
+    </div>
+
+    <check-list ref="checklist" v-on:child-data="showData" v-bind:maxSelect=5></check-list>
 
   </div>
 </template>
@@ -41,22 +42,30 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  input{
-    width:100%;
-    text-align: center;
-    font-size: 1.8rem;
-    outline:none;
-  }
+<style scoped lang="scss">
+
   ol{
-    list-style-type:lower-alpha
+    list-style-type:lower-alpha;
+    flex-grow: 0;
   }
   li{
     color: #333;
-    font-size: 1.5rem;
+    font-size: 1rem;
     list-style: circle;
   }
 
+  .line{
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    vertical-align: top;
+    padding: 0 1rem;
+
+    input{
+      font-size: 1rem;
+      width:8rem;
+    }
+  }
   .hide{
     display: none;
   }

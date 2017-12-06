@@ -63,8 +63,14 @@ export default {
           ],
         selectedLen:0,
         checklistShow: false,
-        maxSelect:3
+
   }
+  },
+  props: {
+    maxSelect:{
+        type:Number,
+        default:3
+    }
   },
   methods:{
     selectedItems: function(index){

@@ -21,6 +21,7 @@ export default {
     padding:0;
     margin:0;
     font-size: 12px;
+    overflow: hidden;
   }
   ul,li,p{
     padding: 0;
