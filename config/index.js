@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/index',
+    assetsPublicPath: '/',
     proxyTable: {},
 
     // Various Dev Server settings
@@ -33,7 +33,8 @@ module.exports = {
      */
 
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
+    devtool: 'none',
 
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help
