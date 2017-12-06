@@ -46,3 +46,6 @@ Q. 在pc端查看无异常，在移动端查看页面显示空白
 A. 猜测可能由于sourcemap移动端支持不友好，导致生成js文件找不到。更改config/index.js文件下的devtool为inline-source-map或none，即直接行内引用soucemap或者不引用。
 
 ```
+## 预览地址
+
+https://chenluily0451.github.io/vuePhoneDemo/dist/index#/
