@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import MainContent from '@/components/MainContent'
 import Index from '@/components/Index'
-import store from '@/components/vuex/store'
+import Store from '@/components/vuex/Store'
 
 Vue.use(Router)
 
@@ -20,8 +20,8 @@ export default new Router({
     },
     {
       path: '/vuex/store',
-      name: 'store',
-      component:store
+      name: 'storeBlock',
+      component:Store
     }
   ]
 })

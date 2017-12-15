@@ -1,6 +1,7 @@
 <template>
 
   <div class="main" >
+
     <h1>State</h1>
     <h3>Vuex 使用单一状态树</h3>
     <p>{{count}}</p>
@@ -9,46 +10,36 @@
       <button @click="decrement">—</button>
     </p>
 
+  <store-child></store-child>
   </div>
+
 
 </template>
 
 <script>
-import Vuex from 'vuex'
-import Vue from 'vue'
 
-Vue.use(Vuex)
+import StoreChild from './StoreChild'
 
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    increment: state => state.count++,
-    decrement: state => state.count--
-  }
-})
 
 export default {
-  name: 'store',
-  data() {
-    return {
-
-    }
-  },
+  name:'store',
   computed:{
       count: function(){
-          return store.state.count
+          return this.$store.state.count
     }
+  },
+  components:{
+    StoreChild
   },
   methods:{
     increment: function(){
-        store.commit('increment')
+      this.$store.commit('increment')
     },
     decrement: function(){
-      store.commit('decrement')
+      this.$store.commit('decrement')
     }
   }
+
 }
 </script>
 

@@ -15,16 +15,9 @@
 </template>
 
 <script>
+
 export default {
-  name: 'index',
-  methods:{
-
-  },
-  data() {
-    return {
-
-    }
-  }
+  name: 'index'
 }
 </script>
 
