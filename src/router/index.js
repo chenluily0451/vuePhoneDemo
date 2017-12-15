@@ -5,6 +5,7 @@ import Index from '@/components/Index'
 import Store from '@/components/vuex/Store'
 import Getter from '@/components/vuex/Getter'
 import MutationDemo from '@/components/vuex/MutationDemo'
+import Action from '@/components/vuex/Action'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/vuex/mutation',
       name: 'mutation',
       component:MutationDemo
+    },
+    {
+      path: '/vuex/action',
+      name: 'action',
+      component:Action
     }
   ]
 })

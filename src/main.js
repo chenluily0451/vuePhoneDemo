@@ -14,7 +14,8 @@ Vue.use(Vuex)
 const store =new Vuex.Store({
   state: {
     count: 0,
-    welcomeText:'Hi~',
+    welcomeText:'this is welcomeText',
+    actionName:'this is actionName',
     lists:[
       {
         id: 1,
@@ -47,12 +48,19 @@ const store =new Vuex.Store({
   mutations: {
     increment: state => state.count++,
     decrement: state => state.count--,
-    welcome: state =>  state.welcomeText = 'WELCOME BACK'
+    welcome: state =>  state.welcomeText = 'WELCOME BACK',
+    actionFun:state => state.actionName = 'actionName changed'
+
 
   },
   getters: {
     showTrueLists: state => {
       return state.lists.filter(li => li.show === true)
+    }
+  },
+  actions:{
+    actionFun(context) {
+      setTimeout( ()=>{context.commit('actionFun')},2000 )
     }
   }
 })
