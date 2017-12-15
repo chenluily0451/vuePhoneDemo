@@ -6,22 +6,35 @@
     <div>
       {{actionName}}
     </div>
+    <input type="text"  v-color-change="'red'" v-focus>
   </div>
 
 </template>
 
 <script>
 export default {
-    name: 'Action',
-    computed:{
-      actionName:function(){
-        return this.$store.state.actionName
-      }
-    },
+  name: 'Action',
+  computed:{
+    actionName:function(){
+      return this.$store.state.actionName
+    }
+  },
   methods:{
     add:function(){
         this.$store.dispatch('actionFun')       // action 通过dispatch触发
     }
+  },
+  directives:{
+      focus:{
+        inserted : function (el) {
+          el.focus()
+        }
+      },
+      colorChange:{
+        inserted: function(el, binding){
+          el.style.color = binding.value
+        }
+      }
   }
 }
 </script>

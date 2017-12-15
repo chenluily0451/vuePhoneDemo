@@ -50,8 +50,6 @@ const store =new Vuex.Store({
     decrement: state => state.count--,
     welcome: state =>  state.welcomeText = 'WELCOME BACK',
     actionFun:state => state.actionName = 'actionName changed'
-
-
   },
   getters: {
     showTrueLists: state => {

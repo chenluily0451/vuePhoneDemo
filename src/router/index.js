@@ -6,6 +6,7 @@ import Store from '@/components/vuex/Store'
 import Getter from '@/components/vuex/Getter'
 import MutationDemo from '@/components/vuex/MutationDemo'
 import Action from '@/components/vuex/Action'
+import Container from '@/components/Container'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/vuex/action',
       name: 'action',
       component:Action
+    },
+    {
+      path: '/slot',
+      name: 'Container',
+      component:Container
     }
   ]
 })

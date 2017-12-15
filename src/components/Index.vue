@@ -18,6 +18,9 @@
         <li>
           <a href="#/vuex/action" target="_blank">vuex-action</a>
         </li>
+        <li>
+          <a href="#/slot" target="_blank">具名插槽slot</a>
+        </li>
       </ul>
   </div>
 
