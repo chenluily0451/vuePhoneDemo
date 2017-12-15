@@ -9,6 +9,12 @@
         <li>
           <a href="#/vuex/store" target="_blank">vuex-store</a>
         </li>
+        <li>
+          <a href="#/vuex/getter" target="_blank">vuex-getter</a>
+        </li>
+        <li>
+          <a href="#/vuex/mutation" target="_blank">vuex-mutation</a>
+        </li>
       </ul>
   </div>
 

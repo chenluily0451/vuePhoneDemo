@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 
+
 Vue.config.productionTip = false
 
 
@@ -12,12 +13,47 @@ Vue.use(Vuex)
 
 const store =new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
+    welcomeText:'Hi~',
+    lists:[
+      {
+        id: 1,
+        text:'记录一',
+        show:true
+      },
+      {
+        id: 2,
+        text:'记录二',
+        show:true
+      },
+      {
+        id: 3,
+        text:'记录三',
+        show:true
+      },
+      {
+        id: 4,
+        text:'记录四',
+        show:false
+      },
+      {
+        id: 5,
+        text:'记录五',
+        show:true
+      }
+    ]
   },
 
   mutations: {
     increment: state => state.count++,
-    decrement: state => state.count--
+    decrement: state => state.count--,
+    welcome: state =>  state.welcomeText = 'WELCOME BACK'
+
+  },
+  getters: {
+    showTrueLists: state => {
+      return state.lists.filter(li => li.show === true)
+    }
   }
 })
 
