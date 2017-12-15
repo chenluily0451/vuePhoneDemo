@@ -15,6 +15,9 @@
         <li>
           <a href="#/vuex/mutation" target="_blank">vuex-mutation</a>
         </li>
+        <li>
+          <a href="#/vuex/action" target="_blank">vuex-action</a>
+        </li>
       </ul>
   </div>
 
