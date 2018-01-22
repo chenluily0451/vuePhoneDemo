@@ -21,6 +21,9 @@
         <li>
           <a href="#/slot" target="_blank">具名插槽slot</a>
         </li>
+        <li>
+          <a href="#/slot" target="_blank">is特性</a>
+        </li>
       </ul>
   </div>
 
