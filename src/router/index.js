@@ -8,6 +8,7 @@ import MutationDemo from '@/components/vuex/MutationDemo'
 import Action from '@/components/vuex/Action'
 import Container from '@/components/Container'
 import Is from '@/components/Is'
+import AxiosExample from '@/components/AxiosExample'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/is',
       name: 'Is',
       component:Is
+    },
+    {
+      path: '/axios',
+      name: 'AxiosExample',
+      component:AxiosExample
     }
   ]
 })

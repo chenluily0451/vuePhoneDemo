@@ -24,6 +24,9 @@
         <li>
           <a href="#/slot" target="_blank">is特性</a>
         </li>
+        <li>
+          <a href="#/axios" target="_blank">axios</a>
+        </li>
       </ul>
   </div>
 
