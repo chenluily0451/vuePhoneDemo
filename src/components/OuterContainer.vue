@@ -1,18 +1,34 @@
 <template>
-  <div class="main">
-    <select-component>123</select-component>
+  <div class="main" @click="clickFun">
+    <select-component :datalist=datalist>123</select-component>
+    <p>---------------</p>
+    <select-Target :datalist=datalist ref="select">123</select-Target>
   </div>
 </template>
 
 <script>
 
 import SelectComponent from  "./SelectComponent";
+import SelectTarget from  "./SelectTarget";
 export default {
-  name:'Outer',
-  component:{
-    SelectComponent
+  name:'OuterContainer',
+  components:{
+    SelectComponent,
+    SelectTarget
+  },
+  data(){
+      return{
+          datalist:[1,2,3]
+      }
+  },
+  methods:{
+    clickFun:function(e){
+        console.log(e)
+      if(e.target.className !== 'inputStyle'){
+        this.$refs['select'].isopen = false
+      }
+    }
   }
-
 }
 </script>
 

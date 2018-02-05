@@ -9,6 +9,9 @@ import Action from '@/components/vuex/Action'
 import Container from '@/components/Container'
 import Is from '@/components/Is'
 import AxiosExample from '@/components/AxiosExample'
+import MethodVs from '@/components/MethodVs'
+import OuterContainer from '@/components/OuterContainer'
+import ElementContainer from '@/components/ElementContainer'
 
 Vue.use(Router)
 
@@ -58,6 +61,21 @@ export default new Router({
       path: '/axios',
       name: 'AxiosExample',
       component:AxiosExample
+    },
+    {
+      path: '/vs',
+      name: 'MethodVs',
+      component:MethodVs
+    },
+    {
+      path: '/outer',
+      name: 'OuterContainer',
+      component:OuterContainer
+    },
+    {
+      path: '/element',
+      name: 'ElementContainer',
+      component:ElementContainer
     }
   ]
 })

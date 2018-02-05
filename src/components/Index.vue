@@ -1,6 +1,6 @@
 <template>
 
-  <div class="main" >
+  <div class="main" id="mainMenu" >
       <p>welcome</p>
       <ul>
         <li>
@@ -22,10 +22,19 @@
           <a href="#/slot" target="_blank">具名插槽slot</a>
         </li>
         <li>
-          <a href="#/slot" target="_blank">is特性</a>
+          <a href="#/is" target="_blank">is特性</a>
         </li>
         <li>
           <a href="#/axios" target="_blank">axios</a>
+        </li>
+        <li>
+          <a href="#/vs" target="_blank">methods vs computed</a>
+        </li>
+        <li>
+          <a href="#/outer" target="_blank">select组件问题</a>
+        </li>
+        <li>
+          <a href="#/element" target="_blank">element</a>
         </li>
       </ul>
   </div>
@@ -40,25 +49,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  p{
-    font-size: 30px;
-  }
-  ul{
-    margin-top: 30px;
-    font-size:18px ;
-    li{
-      border-bottom:1px solid #ccc;
-      padding:10px 0;
-      a{
-        width:100%;
-        display: inline-block;
-        text-decoration: none;
-      }
-      &:hover{
-        background: pink;
-      }
+  #mainMenu{
+    p{
+      font-size: 30px;
     }
+    ul{
+      margin-top: 30px;
+      font-size:18px ;
+      li{
+        border-bottom:1px solid #ccc;
+        padding:10px 0;
+        a{
+          width:100%;
+          display: inline-block;
+          text-decoration: none;
+        }
+        &:hover{
+          background: pink;
+        }
+      }
 
+    }
   }
+
 </style>
 

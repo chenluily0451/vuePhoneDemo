@@ -1,12 +1,20 @@
 <template>
-  <div id="app">
+  <div id="app" @click="clickRoot">
     <router-view/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
+  export default {
+  name: 'app',
+  methods:{
+    clickRoot(event){
+      this.$store.dispatch('watchAction');
+    }
+  },
+  computed:{
+
+  }
 }
 </script>
 

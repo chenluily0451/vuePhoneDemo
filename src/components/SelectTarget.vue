@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'SelectComponent',
+  name: 'SelectTaregtComponent',
   data() {
     return {
       isopen:false

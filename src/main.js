@@ -5,7 +5,8 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 import axios from 'axios'
-
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 
 Vue.config.productionTip = false
@@ -14,6 +15,7 @@ Vue.use(Vuex)
 
 Vue.prototype.$axios=axios
 
+Vue.use(Element)
 
 
 
@@ -23,6 +25,7 @@ const store =new Vuex.Store({
     count: 0,
     welcomeText:'this is welcomeText',
     actionName:'this is actionName',
+    watchAction:1,
     lists:[
       {
         id: 1,
@@ -56,7 +59,8 @@ const store =new Vuex.Store({
     increment: state => state.count++,
     decrement: state => state.count--,
     welcome: state =>  state.welcomeText = 'WELCOME BACK',
-    actionFun:state => state.actionName = 'actionName changed'
+    actionFun:state => state.actionName = 'actionName changed',
+    watchAction:state => state.watchAction++
   },
   getters: {
     showTrueLists: state => {
@@ -66,6 +70,9 @@ const store =new Vuex.Store({
   actions:{
     actionFun(context) {
       setTimeout( ()=>{context.commit('actionFun')},2000 )
+    },
+    watchAction(context){
+      context.commit('watchAction')
     }
   }
 })

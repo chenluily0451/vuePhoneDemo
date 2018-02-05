@@ -1,36 +1,64 @@
 <template>
   <div class="main">
-     <ul>
-        <li is="my-li"></li>
-        <my-li>loading.....</my-li>
-       <li>应当注意，如果使用来自以下来源之一的字符串模板，则没有这些限制：</li>
-       <li>script type="text/x-template"</li>
-       <li>JavaScript 内联模板字符串</li>
-       <li>.vue 组件</li>
-     </ul>
-    <table>
-      <my-row></my-row>
-      <tr is="my-row"></tr>
-
-    </table>
+  <p>
+    now: {{now}}
+  </p>
+  <p>
+    <input type="text" v-model="question">
+  </p>
+  <p>
+    {{answer}}
+  </p>
+  <h1 ref="msg">
+    {{message}}
+  </h1>
+    <h1 ref="msg1">
+      {{message1}}
+    </h1>
+    <button @click="changeMsg()">change</button>
 
   </div>
 </template>
 
 <script>
 export default {
-    components : {
-      myLi:{
-        template: '<li>this is a li</li>'
-      },
-      myRow:{
-        template:'<tr>this is a tr</tr>'
+    data() {
+      return {
+        question:'',
+        answer:'',
+        message:'',
+        message1:'unused',
       }
     },
-    data() {
-        return {
-
+    computed:{
+      now: function () {
+        return new Date().getTime()
+      }
+    },
+    watch:{
+        question:function(){
+          this.answer = '输入中。。。。'
+          this.getAnswer()
         }
+
+    },
+    methods:{
+        getAnswer :
+          _.debounce(function () {
+          this.answer = '搜索中'
+          this.$axios({
+            method : 'get',
+            url    : 'https://www.easy-mock.com/mock/5a654e3cd9891651babe284f/example/mock',
+          }).then(data=>this.answer = data.data.message)
+            .catch(data=>this.answer = 'error')
+        },500),
+        changeMsg: function(){
+          this.message = 'hello world';
+          this.$nextTick(()=> {
+              this.message1 = this.$refs.msg.innerHTML
+          })
+        }
+
     }
 }
 </script>
